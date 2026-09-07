@@ -1,0 +1,5 @@
+flow_name,s1_reject_mean,s1_contradiction_mean,s1_modified_fraction_mean,s1_extra_pool_shrinkage_mean,s2_topk_size_mean,s2_keep_mean,s2_downweight_mean,s2_reject_mean,s2_prefer_mean,s2_nonkeep_per_round_mean,s2_changed_batch_items_mean,s2_mean_nonkeep_confidence
+frontier_backbone,0.0,0.0,0.0,0.0,18.0,18.0,0.0,0.0,0.0,0.0,0.0,0.0
+frontier_backbone_llm_s1,0.0,0.0,0.1433,0.0,18.0,18.0,0.0,0.0,0.0,0.0,0.0,0.0
+frontier_backbone_llm_s2,0.0,0.0,0.0,0.0,18.0,17.4444,0.5,0.0556,0.0,0.5556,0.5278,0.3424
+frontier_backbone_llm_s1s2,0.0,0.0,0.1533,0.0,18.0,17.3056,0.6944,0.0,0.0,0.6944,0.5833,0.4056

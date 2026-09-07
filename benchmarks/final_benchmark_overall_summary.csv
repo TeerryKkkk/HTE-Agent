@@ -1,0 +1,5 @@
+flow_name,num_profile_runs,best_observed_mean,best_observed_std,oracle_regret_mean,cumulative_regret_mean,stage2_mean,round1_best_mean,topk_true_mean,post_gate_true_mean,gate_delta_mean
+frontier_backbone,18,0.7921,0.0637,0.0013,25.4243,0.6251,0.7914,0.6227,0.6251,0.0
+frontier_backbone_llm_s1,18,0.7921,0.0637,0.0013,25.4529,0.6246,0.7914,0.6203,0.6246,0.0
+frontier_backbone_llm_s2,18,0.7921,0.0637,0.0013,25.4139,0.6256,0.7914,0.6227,0.6256,0.0
+frontier_backbone_llm_s1s2,18,0.7921,0.0637,0.0013,25.1099,0.6255,0.7914,0.6224,0.6255,-0.0015
