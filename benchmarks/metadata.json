@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "snapshot_kind": "historical_offline_simulation",
+  "hash_normalization": "UTF-8 file bytes with CRLF replaced by LF; portable across Git checkout line endings",
+  "snapshot_commit": "4991961276ad9acbe60e59103cc279452d30aacb",
+  "snapshot_is_current_semantics": false,
+  "artifacts": {
+    "final_benchmark_comparison.csv": {
+      "sha256": "75fdcc310fe9e260dd08d973d5650b950b7b67a74aebe4f9ee6423836b8470cb",
+      "rows": 72
+    },
+    "final_benchmark_diagnostics_summary.csv": {
+      "sha256": "ff0e7e988c118fb94a39c9daf5872fdf54afc24902c6fa17b784cc8f8aed6c47",
+      "rows": 4
+    },
+    "final_benchmark_overall_summary.csv": {
+      "sha256": "3b51b52d84cc1e3e576b2869e9649e2fe6bc2840f1e348958334c0a6a0af45f1",
+      "rows": 4
+    },
+    "final_benchmark_profile_summary.csv": {
+      "sha256": "c4c07b3518a9614083ef737d1f719c54fdbf6b7ba08a3616b182243205baf14a",
+      "rows": 12
+    }
+  },
+  "simulator": {
+    "type": "handcrafted condition effects and profile interactions with deterministic MD5-seeded noise",
+    "noise_key": [
+      "seed",
+      "profile_name",
+      "candidate_id"
+    ],
+    "new_laboratory_measurements": false,
+    "oracle_scope": "entire capped candidate universe before rule filtering"
+  },
+  "protocol": {
+    "profiles": [
+      "aza_heteroaryl_chloride_guarded",
+      "hindered_aryl_chloride_activation",
+      "bromothiophene_screen"
+    ],
+    "seeds": [
+      13,
+      17,
+      19,
+      23,
+      29,
+      31
+    ],
+    "candidate_pool_cap": 1200,
+    "initial_batch_size": 96,
+    "stage2_batch_size": 12,
+    "stage2_rounds": 2,
+    "observations_per_profile_run": 120,
+    "profile_runs_per_flow": 18,
+    "flow_names_preserved": [
+      "frontier_backbone",
+      "frontier_backbone_llm_s1",
+      "frontier_backbone_llm_s2",
+      "frontier_backbone_llm_s1s2"
+    ]
+  },
+  "legacy_assistance": {
+    "semantics": "model_recommendations_plus_deterministic_backstop_and_calibration",
+    "stage1_deterministic_backstop_merged_on_success": true,
+    "stage1_enabled_status": "success_with_backstop_calibrated",
+    "stage1_enabled_profile_runs": 36,
+    "stage2_successful_summary_empty_fields": "filled with deterministic summary recommendations",
+    "stage2_failed_gate": "deterministic observed-factor recommendations then constraints",
+    "failed_or_unavailable_stage1": "deterministic domain recommendations then calibration",
+    "observed_stage2_gate_status": "success",
+    "status_scope": "Curated CSV Stage 2 status stores only the last gate; local artifacts were checked for both rounds.",
+    "run_success": "Legacy execution flag; does not establish successful LLM evaluation.",
+    "batch_change_limit": "Legacy gate checked rank cutoff changes before diversity selection, not an enforced bound on actual batch changes.",
+    "attribution_limit": "The Stage 1 treatment does not isolate the effect of model recommendations from the merged domain heuristics."
+  },
+  "historical_model_provenance": {
+    "status": "recovered_from_matching_local_run_artifacts",
+    "logged_request_model": {
+      "stage1_critic": "openai/gpt-4.1-mini",
+      "stage2_summarizer": "openai/gpt-4.1-mini",
+      "stage2_gate": "openai/gpt-4.1-mini"
+    },
+    "distinct_calls": {
+      "stage1_critic": 36,
+      "stage2_summarizer": 72,
+      "stage2_gate": 72
+    },
+    "evidence_repository": "TeerryKkkk/Two-Stage-HTE-Agent",
+    "evidence_checkout_commit": "a1b25ee8b7c12fb87ac6fa4820115b8e57c506f7",
+    "evidence_paths": [
+      "results/*_final_benchmark_seed*/<profile>/llm_s1_critique.json",
+      "results/*_final_benchmark_seed*/<profile>/round{2,3}_llm_s2_{summary,gate}.json"
+    ],
+    "verification": "All four source results/final_benchmark CSVs exactly match the public snapshot; all 216 matching model-bearing artifacts inspected, including 36 duplicate raw Stage 1 critiques.",
+    "evidence_manifest_sha256": "6ab8581a2f10c706393d542ea032f86626352d78dfd98f9af7e2d625fe722641",
+    "raw_artifacts_distributed_here": false,
+    "provider_returned_model_id": null,
+    "exact_backend_revision": null,
+    "unknown_reason": "The legacy client logged the requested model alias, not the provider-returned model or backend revision. No inference from current configuration."
+  },
+  "current_execution": {
+    "assistance_semantics": "model_actions_only_noop_on_failure",
+    "successful_response": "Only supplied model actions, bounded by calibration and actual batch-change constraints.",
+    "failed_or_unavailable_response": "No LLM score changes or candidate rejections; failed summarizer supplies empty recommendations.",
+    "deterministic_backstop_mode": "Removed from execution; historical implementation remains at snapshot_commit.",
+    "paid_model_benchmark_rerun_performed": false,
+    "historical_snapshot_regenerated": false,
+    "preprocessing_change": "Match tBuBrettPhos/t-BuBrettPhos before the shorter BrettPhos substring; historical normalization collapsed these labels."
+  },
+  "data": {
+    "upstream_source": null,
+    "upstream_license": null,
+    "provenance_status": "unresolved",
+    "verified_evidence": "Precedent records contain patent identifiers and structured reaction conditions; support CSVs contain reaction and condition labels. Repository history provides no canonical upstream dataset or redistribution terms.",
+    "files": {
+      "precedent_records.csv": {
+        "previous_path": "data/Datas/DataAssets_rscore1_Buchwald.csv",
+        "sha256": "7e95778d955589c8dc4cbe2b5969ecd4a771fd463f2445ff044674531d7b56b4",
+        "rows": 10900,
+        "columns": [
+          "Column0",
+          "Unnamed: 0",
+          "rsmi",
+          "r_score",
+          "c_score",
+          "score",
+          "r_type",
+          "condition",
+          "patent_name",
+          "yield"
+        ],
+        "patent_examples": [
+          "EP2980077A1",
+          "EP3237398B1",
+          "EP3237398B1"
+        ]
+      },
+      "success_support.csv": {
+        "previous_path": "data/Datas/success_buchwald.csv",
+        "sha256": "f89983de4627f47ff06c5e767901364aa50db4a923ffa9ed632887e2b124283b",
+        "rows": 508,
+        "columns": [
+          "LOT-ID",
+          "Rxn_ID",
+          "SMILES",
+          "exp_name",
+          "type",
+          "targets",
+          "catalyst",
+          "base",
+          "solvent",
+          "temperature"
+        ],
+        "patent_examples": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "failure_support.csv": {
+        "previous_path": "data/Datas/failed_buchwald.csv",
+        "sha256": "3e7ff7da52d27359237da867fa7f8228a2c66d3eba07321765ddf9efdc2a3c02",
+        "rows": 507,
+        "columns": [
+          "LOT-ID",
+          "Rxn_ID",
+          "SMILES",
+          "exp_name",
+          "type",
+          "targets",
+          "catalyst",
+          "base",
+          "solvent",
+          "temperature"
+        ],
+        "patent_examples": [
+          "",
+          "",
+          ""
+        ]
+      }
+    },
+    "loader_transformations": [
+      "Normalizes ligand/base/solvent labels and derives heuristic features from reaction strings.",
+      "Drops precedent rows without a reaction string or at least two recognized condition labels.",
+      "Parses precedent yield percentages; uses default 80 C and 10 h for precedent conditions.",
+      "Parses support conditions from exp_name; assigns fixed proxy outcome_yield 0.84 to success and 0.18 to failure examples."
+    ],
+    "csv_contents_changed": false
+  }
+}

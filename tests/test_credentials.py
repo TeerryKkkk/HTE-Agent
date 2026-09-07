@@ -1,7 +1,7 @@
 from dataclasses import asdict
 
-from pipeline_v2.llm_modules.client import OpenRouterJSONClient
-from pipeline_v2.shared.io_utils import read_api_key
+from hte_agent.llm_modules.client import OpenRouterJSONClient
+from hte_agent.shared.io_utils import read_api_key
 
 
 def client():

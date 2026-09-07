@@ -15,5 +15,6 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: python -m pip install -r requirements-dev.txt
+      - run: python -m pip install -e .
       - run: python -m pytest
-      - run: python -m pipeline_v2.run_frontier_backbone
+      - run: python -m hte_agent.run --mode baseline --protocol smoke --offline

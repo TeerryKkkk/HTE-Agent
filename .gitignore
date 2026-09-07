@@ -19,3 +19,4 @@ credentials.*
 runs/
 results/
 reports/
+pytest-of-*/
